@@ -240,3 +240,30 @@ EKF users receive the email notification, review, add quotation details, and eit
  - On Rejection: An email notification is sent to the LOG department for revisions.
 #### 10. VTB Final 
 VTB provides final review and approval, completing the quotation process.
+
+## App Config for Email Notification
+Email notifications are managed via the App Config/Emailversand-Verwaltung settings in the Directus Collection. The configuration options determine which users receive email notifications for approvals and rejections:
+#### 0: Keine User (No User)
+ - No email notifications are sent to any users.
+#### 1: Nur an beyondbots-User (Client Domain Only)
+ - Email notifications are sent only to users within the beyondbots domain (e.g., @beyondbots.com).
+#### 2: Alle User (All Users)
+ - Email notifications are sent to all relevant users, regardless of their domain.
+
+## Configuring the Directus Host
+
+To connect the application to a new Directus instance, update the Directus host URL in the .env file:
+#### 1. Edit the .env File:
+ - Open the .env file in the project’s root directory
+ - Update or add the Directus host variable:
+```bash
+DIRECTUS_HOST=https://your-new-directus-host.com
+```
+ - Replace https://your-new-directus-host.com with the new Directus URL (include https:// or http://, no trailing slash).
+#### 2. Save and Restart:
+ - Save the .env file.
+ - Restart the application
+#### 3. Verify the Connection:
+ - Test a feature that uses Directus.
+ - Check application logs for connection errors.
+ - Ensure the Directus URL is accessible and any required API tokens are valid.
